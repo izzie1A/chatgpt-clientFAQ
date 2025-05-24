@@ -1,0 +1,77 @@
+[
+  {
+    "user_query": "How much is shipping from Canada to Hong Kong?",
+    "matches_faq": {
+      "question": "How much does it cost to ship from Toronto to Hong Kong?",
+      "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+      "keywords": [
+        "cost",
+        "price",
+        "shipping",
+        "Toronto",
+        "Hong Kong",
+        "Canada"
+      ]
+    }
+  },
+  {
+    "user_query": "delivery time to Hong Kong from Toronto",
+    "matches_faq": {
+      "question": "How long does shipping from Toronto to Hong Kong take?",
+      "answer": "Air freight takes 3\u20137 days, sea freight 20\u201335 days, and express courier 2\u20135 days. Customs may affect delivery time.",
+      "keywords": [
+        "delivery",
+        "time",
+        "duration",
+        "shipping",
+        "Toronto",
+        "Hong Kong"
+      ]
+    }
+  },
+  {
+    "user_query": "Can I send batteries?",
+    "matches_faq": {
+      "question": "What items are restricted or prohibited from shipping?",
+      "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+      "keywords": [
+        "restricted",
+        "prohibited",
+        "items",
+        "batteries",
+        "shipping",
+        "dangerous goods"
+      ]
+    }
+  },
+  {
+    "user_query": "Do you pick up from my house?",
+    "matches_faq": {
+      "question": "Do you offer door-to-door service?",
+      "answer": "Yes, we provide convenient door-to-door pickup and delivery services in most locations.",
+      "keywords": [
+        "pickup",
+        "door-to-door",
+        "home",
+        "delivery",
+        "house",
+        "service"
+      ]
+    }
+  },
+  {
+    "user_query": "track my package",
+    "matches_faq": {
+      "question": "Can I track my shipment?",
+      "answer": "Yes. Use our tracking portal online with your order number to view real-time updates.",
+      "keywords": [
+        "track",
+        "tracking",
+        "shipment",
+        "package",
+        "order number",
+        "status"
+      ]
+    }
+  }
+]
