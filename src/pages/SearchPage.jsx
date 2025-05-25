@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import faqData from '../assets/logistics_faq_tagged.json';
-import { askChatGPT, testAPIKey } from '../api/chatgpt';
+import faqData from '../assets/logistics_faq_tag.json';
+import { getTagFromChatGPT } from '../api/chatgpt';
 
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,42 +13,33 @@ const SearchPage = () => {
     setAllFaqs(faqData);
   }, []);
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchQuery.trim()) {
       setSearchResults([]);
       return;
     }
-    
     setIsSearching(true);
-    
-    // Simple search implementation
-    const query = searchQuery.toLowerCase().trim();
-    
-    const results = allFaqs.filter(item => {
-      // Search in question and answer
-      return (
-        item.question.toLowerCase().includes(query) ||
-        item.answer.toLowerCase().includes(query) ||
-        // Search in tags if they exist
-        (item.tags && item.tags.some(tag => tag.toLowerCase().includes(query)))
-      );
-    }).map(item => ({
-      id: item.id,
-      title: item.question,
-      preview: item.answer.length > 150 ? item.answer.substring(0, 150) + '...' : item.answer,
-      fullAnswer: item.answer,
-      tags: item.tags || []
-    }));
-    
-    setSearchResults(results);
-    setIsSearching(false);
+    try {
+      const tagsString = await getTagFromChatGPT(searchQuery);
+      try {
+        console.log(tagsString);
+      } catch (e) {
+        console.error('Error parsing tags:', e);
+      }
+
+      setSearchResults(tagsString);
+    } catch (error) {
+      console.error('Error in search:', error);
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Search</h2>
-      
+
       <form onSubmit={handleSearch} style={styles.searchForm}>
         <input
           type="text"
@@ -58,8 +49,8 @@ const SearchPage = () => {
           style={styles.searchInput}
           disabled={isSearching}
         />
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           style={styles.searchButton}
           disabled={isSearching || !searchQuery.trim()}
         >
@@ -72,18 +63,28 @@ const SearchPage = () => {
           <p>Searching...</p>
         ) : searchResults.length > 0 ? (
           <div style={styles.resultsList}>
-            {searchResults.map((result) => (
-              <div key={result.id} style={styles.resultItem}>
-                <h3 style={styles.resultTitle}>{result.title}</h3>
-                <p style={styles.resultPreview}>{result.preview}</p>
-              </div>
-            ))}
+            {searchResults}
           </div>
         ) : searchQuery ? (
           <p>No results found for "{searchQuery}"</p>
         ) : (
           <p>Enter a search query to begin</p>
         )}
+      </div>
+
+
+
+
+      <div>
+        <h2 style={styles.title}>FAQ</h2>
+        <div style={styles.faqContainer}>
+          {allFaqs.map((item, index) => (
+            <div key={index} style={styles.faqItem}>
+              <h3 style={styles.question}>{item.question}</h3>
+              <p style={styles.answer}>{item.answer}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

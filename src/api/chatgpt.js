@@ -107,7 +107,7 @@ export async function embeddSearchChatGPT(message) {
 }
 export async function getTagFromChatGPT(message) {
   let lastError;
-  let getTagPrompt = `Extract the most important keywords from the following question. Focus on keywords that represent customer intent, concerns, or specific topics relevant to a logistics company (e.g., delivery, tracking, shipping, delays, location, etc.). Return the result as a string array. \n Question: ${message}`;
+  let getTagPrompt = `Extract important keywords from the following question. Focus on keywords that represent customer intent, concerns, or specific topics relevant to a logistics company. Return the result as a string array. \n Question: ${message}`;
   
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
