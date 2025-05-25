@@ -82,6 +82,9 @@ const SearchPage = () => {
             <div key={index} style={styles.faqItem}>
               <h3 style={styles.question}>{item.question}</h3>
               <p style={styles.answer}>{item.answer}</p>
+              {item.tags.map((tag, index) => (
+                <b key={index} style={styles.tag}>{tag}</b>
+              ))}
             </div>
           ))}
         </div>
@@ -162,6 +165,16 @@ const styles = {
     margin: 0,
     color: '#6c757d',
     lineHeight: 1.5,
+  },
+  tag: {
+    display: 'inline-block',
+    backgroundColor: '#e9ecef',
+    color: '#495057',
+    padding: '0.25rem 0.5rem',
+    borderRadius: '4px',
+    fontSize: '0.8rem',
+    marginRight: '0.5rem',
+    marginBottom: '0.5rem',
   },
 };
 
