@@ -140,7 +140,6 @@ function App() {
   const styles = {
     appContainer: {
       minHeight: '100vh',
-      minWidth: '100vw',
       backgroundColor: '#f8f9fa',
     },
     container: {

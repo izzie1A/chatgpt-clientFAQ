@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#1)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#2)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "What items are restricted or prohibited from shipping? (Q#3)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Do you offer door-to-door service? (Q#4)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "Can I track my shipment? (Q#5)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What documents are required for international shipping? (Q#6)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "Do you offer shipping insurance? (Q#7)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "How are customs duties and taxes handled? (Q#8)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "Can I consolidate multiple shipments into one? (Q#9)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "Do you provide packing and labeling services? (Q#10)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 11,
+    "question": "How do I request a shipping quote? (Q#11)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "What payment methods do you accept? (Q#12)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 13,
+    "question": "What if my shipment is delayed or lost? (Q#13)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Do you handle customs clearance? (Q#14)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 15,
+    "question": "Can I speak with a shipping specialist? (Q#15)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#16)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 17,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#17)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 18,
+    "question": "What items are restricted or prohibited from shipping? (Q#18)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "Do you offer door-to-door service? (Q#19)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 20,
+    "question": "Can I track my shipment? (Q#20)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "What documents are required for international shipping? (Q#21)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 22,
+    "question": "Do you offer shipping insurance? (Q#22)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "How are customs duties and taxes handled? (Q#23)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 24,
+    "question": "Can I consolidate multiple shipments into one? (Q#24)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "Do you provide packing and labeling services? (Q#25)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 26,
+    "question": "How do I request a shipping quote? (Q#26)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 27,
+    "question": "What payment methods do you accept? (Q#27)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 28,
+    "question": "What if my shipment is delayed or lost? (Q#28)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 29,
+    "question": "Do you handle customs clearance? (Q#29)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 30,
+    "question": "Can I speak with a shipping specialist? (Q#30)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 31,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#31)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 32,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#32)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 33,
+    "question": "What items are restricted or prohibited from shipping? (Q#33)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Do you offer door-to-door service? (Q#34)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 35,
+    "question": "Can I track my shipment? (Q#35)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 36,
+    "question": "What documents are required for international shipping? (Q#36)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 37,
+    "question": "Do you offer shipping insurance? (Q#37)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 38,
+    "question": "How are customs duties and taxes handled? (Q#38)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 39,
+    "question": "Can I consolidate multiple shipments into one? (Q#39)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 40,
+    "question": "Do you provide packing and labeling services? (Q#40)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 41,
+    "question": "How do I request a shipping quote? (Q#41)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 42,
+    "question": "What payment methods do you accept? (Q#42)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 43,
+    "question": "What if my shipment is delayed or lost? (Q#43)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 44,
+    "question": "Do you handle customs clearance? (Q#44)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 45,
+    "question": "Can I speak with a shipping specialist? (Q#45)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 46,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#46)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 47,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#47)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 48,
+    "question": "What items are restricted or prohibited from shipping? (Q#48)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 49,
+    "question": "Do you offer door-to-door service? (Q#49)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 50,
+    "question": "Can I track my shipment? (Q#50)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 51,
+    "question": "What documents are required for international shipping? (Q#51)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 52,
+    "question": "Do you offer shipping insurance? (Q#52)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 53,
+    "question": "How are customs duties and taxes handled? (Q#53)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 54,
+    "question": "Can I consolidate multiple shipments into one? (Q#54)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 55,
+    "question": "Do you provide packing and labeling services? (Q#55)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 56,
+    "question": "How do I request a shipping quote? (Q#56)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 57,
+    "question": "What payment methods do you accept? (Q#57)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 58,
+    "question": "What if my shipment is delayed or lost? (Q#58)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 59,
+    "question": "Do you handle customs clearance? (Q#59)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 60,
+    "question": "Can I speak with a shipping specialist? (Q#60)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 61,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#61)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 62,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#62)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 63,
+    "question": "What items are restricted or prohibited from shipping? (Q#63)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 64,
+    "question": "Do you offer door-to-door service? (Q#64)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 65,
+    "question": "Can I track my shipment? (Q#65)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 66,
+    "question": "What documents are required for international shipping? (Q#66)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 67,
+    "question": "Do you offer shipping insurance? (Q#67)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 68,
+    "question": "How are customs duties and taxes handled? (Q#68)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 69,
+    "question": "Can I consolidate multiple shipments into one? (Q#69)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 70,
+    "question": "Do you provide packing and labeling services? (Q#70)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 71,
+    "question": "How do I request a shipping quote? (Q#71)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 72,
+    "question": "What payment methods do you accept? (Q#72)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 73,
+    "question": "What if my shipment is delayed or lost? (Q#73)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Do you handle customs clearance? (Q#74)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 75,
+    "question": "Can I speak with a shipping specialist? (Q#75)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 76,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#76)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 77,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#77)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 78,
+    "question": "What items are restricted or prohibited from shipping? (Q#78)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 79,
+    "question": "Do you offer door-to-door service? (Q#79)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 80,
+    "question": "Can I track my shipment? (Q#80)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 81,
+    "question": "What documents are required for international shipping? (Q#81)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 82,
+    "question": "Do you offer shipping insurance? (Q#82)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 83,
+    "question": "How are customs duties and taxes handled? (Q#83)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 84,
+    "question": "Can I consolidate multiple shipments into one? (Q#84)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 85,
+    "question": "Do you provide packing and labeling services? (Q#85)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  },
+  {
+    "id": 86,
+    "question": "How do I request a shipping quote? (Q#86)",
+    "answer": "Use our instant quote tool or email/call us with shipment details.",
+    "tags": [
+      "quote_request",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 87,
+    "question": "What payment methods do you accept? (Q#87)",
+    "answer": "We accept bank transfer, credit cards, PayPal, and invoicing for approved clients.",
+    "tags": [
+      "general_shipping",
+      "payment_methods"
+    ]
+  },
+  {
+    "id": 88,
+    "question": "What if my shipment is delayed or lost? (Q#88)",
+    "answer": "If issues arise, our claims team will assist. Insurance speeds up resolution.",
+    "tags": [
+      "general_shipping",
+      "shipment_issues"
+    ]
+  },
+  {
+    "id": 89,
+    "question": "Do you handle customs clearance? (Q#89)",
+    "answer": "Yes. We offer customs brokerage services at origin and destination.",
+    "tags": [
+      "brokerage_services",
+      "customs_handling"
+    ]
+  },
+  {
+    "id": 90,
+    "question": "Can I speak with a shipping specialist? (Q#90)",
+    "answer": "Yes. Our consultants are available Mon–Sat, 9am–6pm.",
+    "tags": [
+      "general_shipping",
+      "customer_support"
+    ]
+  },
+  {
+    "id": 91,
+    "question": "How much does it cost to ship from Toronto to Hong Kong? (Q#91)",
+    "answer": "The cost depends on shipment size, weight, service type, and customs requirements. Use our online calculator or contact us directly.",
+    "tags": [
+      "toronto_hk",
+      "cost_estimate"
+    ]
+  },
+  {
+    "id": 92,
+    "question": "How long does shipping from Toronto to Hong Kong take? (Q#92)",
+    "answer": "Air freight takes 3–7 days, sea freight 20–35 days, and express courier 2–5 days. Customs may affect delivery time.",
+    "tags": [
+      "toronto_hk",
+      "delivery_time"
+    ]
+  },
+  {
+    "id": 93,
+    "question": "What items are restricted or prohibited from shipping? (Q#93)",
+    "answer": "We do not carry hazardous materials, perishables without special arrangements, or illegal goods. See our full restriction list.",
+    "tags": [
+      "prohibited_items",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 94,
+    "question": "Do you offer door-to-door service? (Q#94)",
+    "answer": "Yes, we provide various shipping methods including door-to-door service.",
+    "tags": [
+      "door_to_door",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 95,
+    "question": "Can I track my shipment? (Q#95)",
+    "answer": "Yes. Each shipment gets a tracking number. Track online anytime.",
+    "tags": [
+      "tracking_service",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 96,
+    "question": "What documents are required for international shipping? (Q#96)",
+    "answer": "You typically need a commercial invoice, packing list, and bill of lading. We guide you through the process.",
+    "tags": [
+      "general_shipping",
+      "support_info"
+    ]
+  },
+  {
+    "id": 97,
+    "question": "Do you offer shipping insurance? (Q#97)",
+    "answer": "Yes. Insurance is available and recommended for high-value goods.",
+    "tags": [
+      "insurance_options",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 98,
+    "question": "How are customs duties and taxes handled? (Q#98)",
+    "answer": "Duties depend on the destination. We offer both DDU and DDP options.",
+    "tags": [
+      "customs_handling",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 99,
+    "question": "Can I consolidate multiple shipments into one? (Q#99)",
+    "answer": "Yes. We offer consolidation to reduce costs and optimize space.",
+    "tags": [
+      "consolidation",
+      "general_shipping"
+    ]
+  },
+  {
+    "id": 100,
+    "question": "Do you provide packing and labeling services? (Q#100)",
+    "answer": "Yes. We offer professional packaging and labeling services.",
+    "tags": [
+      "general_shipping",
+      "packing_services"
+    ]
+  }
+]
