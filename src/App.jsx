@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { askChatGPT, testAPIKey } from './api/chatgpt';
 import FaqPage from './pages/FaqPage';
 import SearchPage from './pages/SearchPage';
+import EmbeddedSearch from './pages/EmbeddedSearch';
 
 // Navbar Component
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
         <Link to="/" style={navLinkStyle}>Home</Link>
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
         <Link to="/search" style={navLinkStyle}>Search</Link>
+        <Link to="/embedded-search" style={navLinkStyle}>Embedded Search</Link>
       </div>
     </nav>
   );
@@ -322,6 +324,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ChatInterface />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/embedded-search" element={<EmbeddedSearch />} />
             <Route path="/search" element={<SearchPage />} />
           </Routes>
         </div>
