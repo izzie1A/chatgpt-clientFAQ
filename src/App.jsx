@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { askChatGPT, testAPIKey } from './api/chatgpt';
 import FaqPage from './pages/FaqPage';
+import SearchPage from './pages/SearchPage';
 
 // Navbar Component
 const Navbar = () => {
@@ -25,12 +26,14 @@ const Navbar = () => {
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
+        textFillColor: 'transparent',
       }}>
         ChatGPT
       </Link>
       <div style={{ display: 'flex', gap: '2rem' }}>
         <Link to="/" style={navLinkStyle}>Home</Link>
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
+        <Link to="/search" style={navLinkStyle}>Search</Link>
       </div>
     </nav>
   );
@@ -319,6 +322,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ChatInterface />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/search" element={<SearchPage />} />
           </Routes>
         </div>
       </div>
