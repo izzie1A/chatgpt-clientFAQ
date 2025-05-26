@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { askChatGPT, testAPIKey } from './api/chatgpt';
 import FaqPage from './pages/FaqPage';
 import SearchPage from './pages/SearchPage';
 import EmbeddedSearch from './pages/EmbeddedSearch';
+import { FirebaseProvider } from './firebase/FirebaseContext';
 
 // Navbar Component
 const Navbar = () => {
+  const navLinkStyle = {
+    textDecoration: 'none',
+    color: '#6c757d',
+    fontWeight: '500',
+    padding: '0.5rem 0',
+    transition: 'all 0.3s ease',
+    fontSize: '1.1rem',
+    ':hover': {
+      color: '#4a6fa5',
+    },
+  };
+
   return (
     <nav style={{
       display: 'flex',
@@ -41,20 +54,8 @@ const Navbar = () => {
   );
 };
 
-const navLinkStyle = {
-  textDecoration: 'none',
-  color: '#6c757d',
-  fontWeight: '500',
-  padding: '0.5rem 0',
-  transition: 'all 0.3s ease',
-  fontSize: '1.1rem',
-  ':hover': {
-    color: '#4a6fa5',
-  },
-};
-
-// Main App Component
-function App() {
+// Home Component
+const Home = () => {
   const [input, setInput] = useState('');
   const [reply, setReply] = useState('');
   const [selectedQuestion, setSelectedQuestion] = useState('');
@@ -126,7 +127,6 @@ function App() {
 
     if (!question) return;
 
-    setInput(question);
     setIsLoading(true);
     setError(null);
 
@@ -141,195 +141,148 @@ function App() {
     }
   };
 
-  // Styles
-  const styles = {
-    appContainer: {
-      minHeight: '100vh',
-      minWidth: '100vw',
-      backgroundColor: '#f8f9fa',
-    },
-    container: {
-      padding: '24px',
-      maxWidth: '800px',
-      margin: '0 auto',
-      fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-      color: '#333',
-      lineHeight: 1.6,
-      boxSizing: 'border-box',
-    },
-    header: {
-      textAlign: 'center',
-      marginBottom: '32px',
-    },
-    select: {
-      width: '100%',
-      padding: '12px',
-      marginBottom: '16px',
-      borderRadius: '8px',
-      border: '1px solid #ddd',
-      fontSize: '16px',
-      backgroundColor: '#fff',
-    },
-    button: {
-      backgroundColor: '#4a6fa5',
-      color: 'white',
-      border: 'none',
-      padding: '12px 24px',
-      borderRadius: '8px',
-      cursor: 'pointer',
-      fontSize: '16px',
-      marginRight: '12px',
-      transition: 'all 0.3s ease',
-      ':hover': {
-        backgroundColor: '#3a5a80',
-      },
-      ':disabled': {
-        backgroundColor: '#cccccc',
-        cursor: 'not-allowed',
-      },
-    },
-    textarea: {
-      width: '100%',
-      padding: '12px',
-      borderRadius: '8px',
-      border: '1px solid #ddd',
-      fontSize: '16px',
-      marginBottom: '16px',
-      resize: 'vertical',
-      minHeight: '120px',
-      ':focus': {
-        outline: 'none',
-        borderColor: '#4a6fa5',
-        boxShadow: '0 0 0 2px rgba(74, 111, 165, 0.2)',
-      },
-    },
-    responseContainer: {
-      marginTop: '32px',
-      padding: '20px',
-      backgroundColor: '#fff',
-      borderRadius: '8px',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-    },
-    responseTitle: {
-      marginTop: 0,
-      color: '#2c3e50',
-    },
-    error: {
-      color: '#e74c3c',
-      marginTop: '8px',
-    },
-    loading: {
-      color: '#7f8c8d',
-      fontStyle: 'italic',
-    },
+  const containerStyle = {
+    maxWidth: '800px',
+    margin: '2rem auto',
+    padding: '2rem',
+    backgroundColor: '#fff',
+    borderRadius: '12px',
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
   };
 
-  // Chat Interface Component
-  const ChatInterface = () => (
-    <>
-      <div style={styles.header}>
-        <h1 style={{
-          margin: 0,
-          fontSize: '2.2em',
-          background: 'linear-gradient(90deg, #4a6fa5, #5e9ce0)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-          backgroundClip: 'text',
-          textFillColor: 'transparent',
-          fontWeight: '800',
-          letterSpacing: '-0.5px',
-          textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-        }}>Talk to ChatGPT</h1>
-        <p style={{
-          color: '#6c757d',
-          fontSize: '1.1em',
-          maxWidth: '600px',
-          margin: '12px auto 0',
-          lineHeight: '1.5'
-        }}>
-          Ask me anything about shipping, returns, or other topics!
-        </p>
-      </div>
+  const headingStyle = {
+    textAlign: 'center',
+    color: '#2c3e50',
+    marginBottom: '2rem',
+    fontWeight: '600',
+  };
 
-      <div style={{ marginBottom: '32px' }}>
-        <div style={{ marginBottom: '16px' }}>
-          <select
-            value={selectedQuestion}
-            onChange={handleQuestionSelect}
-            style={styles.select}
-            disabled={isLoading}
-          >
-            {commonQuestions.map((q) => (
-              <option key={q.value} value={q.value}>
-                {q.label}
-              </option>
-            ))}
-          </select>
-        </div>
+  const inputStyle = {
+    width: '100%',
+    padding: '12px 16px',
+    fontSize: '1rem',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    marginBottom: '1rem',
+    boxSizing: 'border-box',
+    transition: 'border-color 0.3s ease',
+  };
 
-        <button
-          onClick={handleTestShippingQuestion}
-          disabled={isLoading || !selectedQuestion}
-          style={{
-            ...styles.button,
-            ...(isLoading && { backgroundColor: '#cccccc', cursor: 'not-allowed' })
-          }}
+  const buttonStyle = {
+    backgroundColor: '#4a6fa5',
+    color: 'white',
+    border: 'none',
+    padding: '12px 24px',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    fontWeight: '500',
+    transition: 'all 0.3s ease',
+    width: '100%',
+    marginTop: '1rem',
+  };
+
+  const replyStyle = {
+    marginTop: '2rem',
+    padding: '1.5rem',
+    backgroundColor: '#f8f9fa',
+    borderRadius: '8px',
+    whiteSpace: 'pre-wrap',
+  };
+
+  const errorStyle = {
+    color: '#dc3545',
+    marginTop: '1rem',
+    padding: '0.75rem',
+    backgroundColor: '#f8d7da',
+    borderRadius: '4px',
+    border: '1px solid #f5c6cb',
+  };
+
+  const selectStyle = {
+    width: '100%',
+    padding: '12px 16px',
+    fontSize: '1rem',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    marginBottom: '1rem',
+    backgroundColor: 'white',
+    cursor: 'pointer',
+  };
+
+  return (
+    <div style={containerStyle}>
+      <h1 style={headingStyle}>Chat with ChatGPT</h1>
+      
+      <div>
+        <select 
+          value={selectedQuestion} 
+          onChange={handleQuestionSelect}
+          style={selectStyle}
         >
-          {isLoading ? 'Sending...' : 'Ask Selected Question'}
-        </button>
-      </div>
+          {commonQuestions.map((q) => (
+            <option key={q.value} value={q.value}>
+              {q.label}
+            </option>
+          ))}
+        </select>
 
-      <div style={{ marginBottom: '24px' }}>
-        <textarea
-          rows="8"
+        <input
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your question here..."
-          style={styles.textarea}
-          disabled={isLoading}
+          style={inputStyle}
+          disabled={isLoading || (selectedQuestion && selectedQuestion !== 'custom')}
         />
 
-        <button
-          onClick={handleSend}
-          disabled={isLoading || !input.trim()}
+        <button 
+          onClick={handleTestShippingQuestion}
+          disabled={isLoading || (!input.trim() && !selectedQuestion)}
           style={{
-            ...styles.button,
-            ...((isLoading || !input.trim()) && { backgroundColor: '#cccccc', cursor: 'not-allowed' })
+            ...buttonStyle,
+            opacity: (isLoading || (!input.trim() && !selectedQuestion)) ? 0.7 : 1,
+            cursor: (isLoading || (!input.trim() && !selectedQuestion)) ? 'not-allowed' : 'pointer',
           }}
         >
-          {isLoading ? 'Sending...' : 'Send Message'}
+          {isLoading ? 'Sending...' : 'Ask ChatGPT'}
         </button>
-      </div>
 
-      <div style={styles.responseContainer}>
-        <h3 style={styles.responseTitle}>ChatGPT Response:</h3>
-        {isLoading ? (
-          <p style={styles.loading}>Loading response...</p>
-        ) : error ? (
-          <p style={styles.error}>{error}</p>
-        ) : reply ? (
-          <div style={{ whiteSpace: 'pre-line' }}>{reply}</div>
-        ) : (
-          <p style={styles.loading}>Send a message to get a response...</p>
+        {error && <div style={errorStyle}>{error}</div>}
+
+        {reply && (
+          <div style={replyStyle}>
+            <h3>Response:</h3>
+            <p>{reply}</p>
+          </div>
         )}
       </div>
-    </>
+    </div>
   );
+};
 
+// Main App Component
+function AppContent() {
   return (
-    <Router>
-      <div style={styles.appContainer}>
-        <Navbar />
-        <div style={styles.container}>
-          <Routes>
-            <Route path="/" element={<ChatInterface />} />
-            <Route path="/faq" element={<FaqPage />} />
-            <Route path="/embedded-search" element={<EmbeddedSearch />} />
-            <Route path="/search" element={<SearchPage />} />
-          </Routes>
-        </div>
+    <div className="App">
+      <Navbar />
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/faq" element={<FaqPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/embedded-search" element={<EmbeddedSearch />} />
+        </Routes>
       </div>
-    </Router>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <FirebaseProvider>
+      <AppContent />
+    </FirebaseProvider>
   );
 }
 
