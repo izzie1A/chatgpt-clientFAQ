@@ -32,10 +32,10 @@ const Navbar = () => {
         ChatGPT
       </Link>
       <div style={{ display: 'flex', gap: '2rem' }}>
-        <Link to="/" style={navLinkStyle}>Home</Link>
+        {/* <Link to="/" style={navLinkStyle}>Home</Link> */}
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
         <Link to="/search" style={navLinkStyle}>Search</Link>
-        <Link to="/embedded-search" style={navLinkStyle}>Embedded Search</Link>
+        <Link to="/" style={navLinkStyle}>Embedded Search</Link>
       </div>
     </nav>
   );
@@ -230,7 +230,7 @@ function App() {
   // Chat Interface Component
   const ChatInterface = () => (
     <>
-      <div style={styles.header}>
+      {/* <div style={styles.header}>
         <h1 style={{
           margin: 0,
           fontSize: '2.2em',
@@ -315,7 +315,7 @@ function App() {
         ) : (
           <p style={styles.loading}>Send a message to get a response...</p>
         )}
-      </div>
+      </div> */}
     </>
   );
 
@@ -325,8 +325,9 @@ function App() {
         <Navbar />
         <div style={styles.container}>
           <Routes>
-            <Route path="/" element={<ChatInterface />} />
+            {/* <Route path="/" element={<ChatInterface />} /> */}
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/" element={<EmbeddedSearch />} />
             <Route path="/embedded-search" element={<EmbeddedSearch />} />
             <Route path="/search" element={<SearchPage />} />
           </Routes>

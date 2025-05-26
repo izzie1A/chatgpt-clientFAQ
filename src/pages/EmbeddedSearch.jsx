@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
-import { embeddSearchChatGPT } from 'src\api\chatgpt.js';
+import { embeddSearchChatGPT } from '../api/chatgpt.js';
+import faqData from '../assets/logistics_faq_embedded.json';
+
+
+function cosineSimilarity(a, b) {
+  const dot = a.reduce((sum, val, i) => sum + val * b[i], 0);
+  const magA = Math.sqrt(a.reduce((sum, val) => sum + val * val, 0));
+  const magB = Math.sqrt(b.reduce((sum, val) => sum + val * val, 0));
+  return dot / (magA * magB);
+}
 
 
 const EmbeddedSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+
+  const [text, setText] = useState('');
+  const [embedding, setEmbedding] = useState([]);
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
@@ -23,6 +35,10 @@ const EmbeddedSearch = () => {
     embeddSearchChatGPT()
 
   };
+  const handleSubmit = async () => {
+    const result = await embeddSearchChatGPT(text);
+    setEmbedding(result);
+  };
 
 
   const handleKeyDown = (e) => {
@@ -32,6 +48,8 @@ const EmbeddedSearch = () => {
   };
 
   return (
+
+
     <div style={{
       maxWidth: '800px',
       margin: '2rem auto',
@@ -55,7 +73,40 @@ const EmbeddedSearch = () => {
           gap: '10px',
           marginBottom: '2rem'
         }}>
-          <input
+
+          <textarea
+            rows="4"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Enter your Question..."
+            style={{
+              flex: 1,
+              padding: '12px 16px',
+              fontSize: '1rem',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+              outline: 'none',
+              transition: 'border-color 0.3s',
+            }}
+          />
+          <button onClick={handleSubmit}
+            style={{
+              padding: '0 24px',
+              backgroundColor: '#4a6fa5',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: '1rem',
+              fontWeight: '500',
+              transition: 'background-color 0.3s',
+            }}
+
+          >seraching</button>
+
+
+
+          {/* <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -71,6 +122,7 @@ const EmbeddedSearch = () => {
               transition: 'border-color 0.3s',
             }}
           />
+
           <button
             onClick={handleSearch}
             disabled={isSearching || !searchQuery.trim()}
@@ -89,47 +141,38 @@ const EmbeddedSearch = () => {
             }}
           >
             {isSearching ? 'Searching...' : 'Search'}
-          </button>
+          </button> */}
         </div>
 
-        {isSearching ? (
-          <div style={{ textAlign: 'center', padding: '2rem' }}>
-            <p>Searching for "{searchQuery}"...</p>
-          </div>
-        ) : searchResults.length > 0 ? (
+        {embedding.length > 0 && (
           <div>
-            <h3 style={{ marginBottom: '1rem' }}>Search Results:</h3>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              margin: 0
-            }}>
-              {searchResults.map((result, index) => (
-                <li key={index} style={{
-                  padding: '12px 16px',
-                  borderBottom: '1px solid #eee',
-                  '&:last-child': {
-                    borderBottom: 'none'
-                  },
-                  '&:hover': {
-                    backgroundColor: '#f9f9f9'
-                  }
-                }}>
-                  {result}
-                </li>
-              ))}
-            </ul>
+            Searching
           </div>
-        ) : (
-          <p style={{
-            color: '#666',
-            textAlign: 'center',
-            fontStyle: 'italic'
-          }}>
-            Enter a search query and click the Search button to see results.
-          </p>
         )}
       </div>
+
+
+
+      <div id="embedfaqSortResult">
+        {[...faqData]
+          .map(item => ({
+            ...item,
+            similarity: cosineSimilarity(embedding, item.embedding)
+          }))
+          .sort((a, b) => b.similarity - a.similarity)
+          .map((item, index) => (
+            <div key={index} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #eee', borderRadius: '4px' }}>
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+              <div style={{ color: '#666', fontSize: '0.9em' }}>
+                Similarity score: {item.similarity.toFixed(4)}
+              </div>
+            </div>
+          ))}
+      </div>
+
+
+
     </div>
   );
 };

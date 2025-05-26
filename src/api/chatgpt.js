@@ -58,7 +58,7 @@ export async function askChatGPT(message) {
 }
 
 
-export function preprocessText(text) {
+ function preprocessText(text) {
   return text
     .toLowerCase()
     .replace(/[^\w\s]/gi, '') // 移除標點
@@ -67,7 +67,7 @@ export function preprocessText(text) {
 }
 export async function embeddSearchChatGPT(message) {
   let lastError;
-  const cleaned = preprocessText(message);
+  // const cleaned = preprocessText(message);
   
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -81,7 +81,7 @@ export async function embeddSearchChatGPT(message) {
       const response = await axios.post(
         'https://api.openai.com/v1/embeddings',
         {
-          input: cleaned,
+          input: message,
           model: 'text-embedding-ada-002',
         },
         {
