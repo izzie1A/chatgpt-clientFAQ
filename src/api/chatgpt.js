@@ -56,8 +56,18 @@ export async function askChatGPT(message) {
   console.error('最終錯誤:', lastError);
   return 'Sorry, an error occurred. Please try again later.';
 }
+
+
+export function preprocessText(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s]/gi, '') // 移除標點
+    .replace(/\s+/g, ' ')     // 簡化多空格
+    .trim();
+}
 export async function embeddSearchChatGPT(message) {
   let lastError;
+  const cleaned = preprocessText(message);
   
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -69,22 +79,20 @@ export async function embeddSearchChatGPT(message) {
       }
       
       const response = await axios.post(
-        API_URL,
+        'https://api.openai.com/v1/embeddings',
         {
-          model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: message }],
-          temperature: 0.7,
+          input: cleaned,
+          model: 'text-embedding-ada-002',
         },
         {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`
           },
-          timeout: 30000 // 設置請求超時時間（毫秒）
         }
       );
-      
-      return response.data.choices[0].message.content;
+    
+      return response.data.data[0].embedding;
       
     } catch (error) {
       lastError = error;

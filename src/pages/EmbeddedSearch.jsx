@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { embeddSearchChatGPT } from 'src\api\chatgpt.js';
+
 
 const EmbeddedSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -7,14 +9,10 @@ const EmbeddedSearch = () => {
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
-    
     setIsSearching(true);
-    
-    // Simulate API call with timeout
+
     setTimeout(() => {
-      // In a real app, you would make an API call here
       console.log('Searching for:', searchQuery);
-      // For demo purposes, we'll just show a mock result
       setSearchResults([
         `Search result 1 for "${searchQuery}"`,
         `Search result 2 for "${searchQuery}"`,
@@ -22,7 +20,10 @@ const EmbeddedSearch = () => {
       ]);
       setIsSearching(false);
     }, 1000);
+    embeddSearchChatGPT()
+
   };
+
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
