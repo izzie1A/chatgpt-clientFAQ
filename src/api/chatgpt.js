@@ -105,6 +105,8 @@ export async function embeddSearchChatGPT(message) {
   console.error('最終錯誤:', lastError);
   return 'Sorry, an error occurred. Please try again later.';
 }
+
+
 export async function getTagFromChatGPT(message) {
   let lastError;
   let getTagPrompt = `Extract important keywords from the following question. Focus on keywords that represent customer intent, concerns, or specific topics relevant to a logistics company. Return the result as a string array. \n Question: ${message}`;
