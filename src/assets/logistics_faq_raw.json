@@ -1,0 +1,390 @@
+[
+  {
+    "question": "What types of logistics services do you offer?",
+    "answer": "We offer domestic and international shipping, warehousing, last-mile delivery, freight forwarding, customs clearance, and supply chain management."
+  },
+  {
+    "question": "Do you support both B2B and B2C shipping?",
+    "answer": "Yes, we support both business-to-business (B2B) and business-to-consumer (B2C) logistics."
+  },
+  {
+    "question": "Which transportation modes do you provide?",
+    "answer": "We offer air, sea, rail, and road freight, with multimodal options available."
+  },
+  {
+    "question": "Can I choose the carrier for my shipment?",
+    "answer": "In most cases, yes. We partner with major global carriers and allow customers to choose or we can recommend the most efficient option."
+  },
+  {
+    "question": "Do you handle bulk or oversized cargo?",
+    "answer": "Yes, we have expertise in managing heavy, oversized, or irregular cargo, including machinery and construction materials."
+  },
+  {
+    "question": "How do I track my shipment?",
+    "answer": "Use the tracking number provided and input it into our online Tracking Portal."
+  },
+  {
+    "question": "Can I track multiple shipments at once?",
+    "answer": "Yes. Our dashboard allows batch tracking for multiple consignments."
+  },
+  {
+    "question": "How often is tracking information updated?",
+    "answer": "Tracking updates occur in real-time or within minutes of a location scan."
+  },
+  {
+    "question": "What does each tracking status mean?",
+    "answer": "Our tracking glossary provides definitions for statuses such as 'In Transit,' 'Out for Delivery,' and 'Customs Hold.'"
+  },
+  {
+    "question": "How do I get notifications about shipment status?",
+    "answer": "You can opt in for email, SMS, or app notifications during booking."
+  },
+  {
+    "question": "How long does delivery take?",
+    "answer": "Delivery times vary: domestic 1\u20137 days, international air 2\u201310 days, sea freight 2\u20136 weeks."
+  },
+  {
+    "question": "Do you offer same-day or next-day delivery?",
+    "answer": "Yes, in select cities and countries, based on the time of booking and service level."
+  },
+  {
+    "question": "What is last-mile delivery?",
+    "answer": "It refers to the final step of the delivery journey from our hub to the recipient\u2019s door."
+  },
+  {
+    "question": "Do you deliver on weekends and holidays?",
+    "answer": "Yes, but this may incur additional fees and depends on the destination."
+  },
+  {
+    "question": "Can I schedule a specific delivery time?",
+    "answer": "Yes, we offer scheduled delivery slots in many locations."
+  },
+  {
+    "question": "Do you ship internationally?",
+    "answer": "Yes, we offer global shipping to over 200 countries."
+  },
+  {
+    "question": "Do I need to worry about customs forms and documentation?",
+    "answer": "No, we handle all customs documentation and clearance on your behalf."
+  },
+  {
+    "question": "What duties or taxes apply to my international shipment?",
+    "answer": "Duties and taxes vary by destination and goods. We\u2019ll help you calculate them prior to shipping."
+  },
+  {
+    "question": "Can I ship to embargoed or restricted countries?",
+    "answer": "We follow all international trade regulations. Restricted destinations require special approval."
+  },
+  {
+    "question": "How are customs delays handled?",
+    "answer": "We monitor all shipments and coordinate with customs to resolve issues promptly."
+  },
+  {
+    "question": "How do I place a shipment order?",
+    "answer": "You can book online, via our mobile app, or by calling our customer service."
+  },
+  {
+    "question": "Can I modify or cancel my shipment?",
+    "answer": "Yes, but cancellations or changes must be made before dispatch. Charges may apply."
+  },
+  {
+    "question": "How do I request a shipping quote?",
+    "answer": "Use our Quote Tool online or contact our sales team directly."
+  },
+  {
+    "question": "Do you offer recurring shipment scheduling?",
+    "answer": "Yes, recurring pickups and deliveries can be scheduled via our portal."
+  },
+  {
+    "question": "Can I set pickup instructions or delivery preferences?",
+    "answer": "Yes, you may specify pickup locations, contact persons, and delivery notes."
+  },
+  {
+    "question": "Do you offer warehousing services?",
+    "answer": "Yes, including storage, inventory control, picking, packing, labeling, and returns handling."
+  },
+  {
+    "question": "Where are your warehouses located?",
+    "answer": "We have regional warehouses strategically located across major cities and trade hubs."
+  },
+  {
+    "question": "Is inventory tracking available in real time?",
+    "answer": "Yes, via our client portal with API integration."
+  },
+  {
+    "question": "Can you integrate with my e-commerce store?",
+    "answer": "Yes, we support Shopify, WooCommerce, Magento, and more through direct APIs."
+  },
+  {
+    "question": "Do you offer temperature-controlled storage?",
+    "answer": "Yes, we provide cold chain logistics for perishable and sensitive goods."
+  },
+  {
+    "question": "Is my shipment insured?",
+    "answer": "Basic liability is included, and additional insurance can be purchased during booking."
+  },
+  {
+    "question": "What happens if my shipment is lost or damaged?",
+    "answer": "We conduct an investigation and reimburse per the insurance plan or liability coverage."
+  },
+  {
+    "question": "How do I file a damage or loss claim?",
+    "answer": "File via our Claims Portal within the stated claim period with supporting documents."
+  },
+  {
+    "question": "What packaging is recommended for fragile goods?",
+    "answer": "Use double-boxing, cushioning, and 'Fragile' labels. We offer professional packaging on request."
+  },
+  {
+    "question": "Are my goods secure in your warehouses?",
+    "answer": "Yes, our facilities are monitored 24/7 with security staff, alarms, and surveillance systems."
+  },
+  {
+    "question": "What payment methods do you accept?",
+    "answer": "We accept credit/debit cards, PayPal, bank transfers, and corporate billing accounts."
+  },
+  {
+    "question": "Can I receive an invoice or receipt?",
+    "answer": "Yes, invoices are issued automatically after each transaction."
+  },
+  {
+    "question": "Do you offer monthly billing for business clients?",
+    "answer": "Yes, we provide consolidated invoicing for approved corporate accounts."
+  },
+  {
+    "question": "Are there any hidden fees?",
+    "answer": "No. All charges are disclosed before you confirm your order."
+  },
+  {
+    "question": "Can I apply for credit terms?",
+    "answer": "Yes, eligible businesses can apply for credit through our finance team."
+  },
+  {
+    "question": "Do you offer white-glove delivery?",
+    "answer": "Yes. We provide premium delivery with installation, unpacking, and setup."
+  },
+  {
+    "question": "Can you ship hazardous materials?",
+    "answer": "Yes, if properly declared, packed, and compliant with regulations."
+  },
+  {
+    "question": "Do you provide logistics for events or trade shows?",
+    "answer": "Yes, we offer time-sensitive event logistics and on-site coordination."
+  },
+  {
+    "question": "Can you handle returns or reverse logistics?",
+    "answer": "Yes, including product collection, quality inspection, and restocking."
+  },
+  {
+    "question": "Do you support seasonal or high-volume shipping?",
+    "answer": "Yes, we scale resources during peak seasons and promotional campaigns."
+  },
+  {
+    "question": "How can I contact customer support?",
+    "answer": "Via phone, email, live chat, or the support ticket system on our website."
+  },
+  {
+    "question": "What are your support hours?",
+    "answer": "We offer 24/7 support for logistics emergencies and standard business-hour service for general inquiries."
+  },
+  {
+    "question": "Is support available in multiple languages?",
+    "answer": "Yes, we support multiple languages based on your region."
+  },
+  {
+    "question": "How can I provide feedback on your service?",
+    "answer": "You can submit reviews, rate deliveries, or email our quality team directly."
+  },
+  {
+    "question": "Do you offer dedicated account managers?",
+    "answer": "Yes, high-volume clients receive a dedicated logistics specialist for personalized service."
+  },
+    {
+      "question": "What is the difference between freight forwarding and shipping?",
+      "answer": "Freight forwarding involves managing and coordinating the entire shipping process, while shipping refers specifically to the movement of goods."
+    },
+    {
+      "question": "Do you offer customs brokerage services?",
+      "answer": "Yes, our licensed brokers handle customs documentation and ensure compliance with international trade laws."
+    },
+    {
+      "question": "What is a Bill of Lading (BOL)?",
+      "answer": "A BOL is a legal document issued by a carrier to acknowledge receipt of cargo for shipment."
+    },
+    {
+      "question": "How can I prepare my goods for international shipping?",
+      "answer": "Ensure proper packaging, include all necessary documentation, and follow the destination country\u2019s import regulations."
+    },
+    {
+      "question": "What is dimensional weight and how does it affect my shipping cost?",
+      "answer": "Dimensional weight is calculated using the volume of your package. Carriers charge based on whichever is greater: actual weight or dimensional weight."
+    },
+    {
+      "question": "Can I ship personal items?",
+      "answer": "Yes, we ship personal items, provided they comply with local and international regulations."
+    },
+    {
+      "question": "Do you offer packaging services?",
+      "answer": "Yes, we provide professional packaging services to ensure safe and secure transport."
+    },
+    {
+      "question": "What are Incoterms?",
+      "answer": "Incoterms are international commercial terms that define responsibilities between buyers and sellers during shipping."
+    },
+    {
+      "question": "Can I request expedited customs clearance?",
+      "answer": "Yes, we offer expedited clearance for time-sensitive shipments where permitted."
+    },
+    {
+      "question": "How do you calculate shipping charges?",
+      "answer": "Charges depend on weight, dimensions, destination, service level, and additional services required."
+    },
+    {
+      "question": "Do you provide digital proof of delivery (POD)?",
+      "answer": "Yes, POD is available online with timestamp, signature, and delivery confirmation."
+    },
+    {
+      "question": "What is cross-docking?",
+      "answer": "Cross-docking is a practice where goods are unloaded and directly reloaded onto outbound transport with minimal storage."
+    },
+    {
+      "question": "Can you manage returns for international customers?",
+      "answer": "Yes, we offer global reverse logistics solutions, including returns processing and repackaging."
+    },
+    {
+      "question": "What documentation is needed for hazardous material shipments?",
+      "answer": "You need a Material Safety Data Sheet (MSDS), proper labeling, and compliance forms."
+    },
+    {
+      "question": "Do you support bonded warehousing?",
+      "answer": "Yes, we offer bonded storage where goods can be held until duties and taxes are paid."
+    },
+    {
+      "question": "What is the process for booking a full container load (FCL)?",
+      "answer": "You can book FCL through our portal, providing cargo details, origin, and destination."
+    },
+    {
+      "question": "Do you support less-than-container load (LCL) shipments?",
+      "answer": "Yes, LCL shipping is available for smaller cargo that doesn't require a full container."
+    },
+    {
+      "question": "Can I consolidate shipments from different suppliers?",
+      "answer": "Yes, we offer consolidation services to reduce costs and streamline delivery."
+    },
+    {
+      "question": "Do you provide drop-shipping services?",
+      "answer": "Yes, we can ship directly to your customers on your behalf."
+    },
+    {
+      "question": "How do you ensure temperature-sensitive goods remain compliant?",
+      "answer": "We use GPS-monitored, temperature-controlled vehicles and storage with real-time alerts."
+    },
+    {
+      "question": "Do you offer warehouse picking and packing automation?",
+      "answer": "Yes, we use robotic systems and barcode scanners to speed up order fulfillment."
+    },
+    {
+      "question": "How are delivery exceptions handled?",
+      "answer": "Our support team investigates and re-routes or reschedules the delivery as needed."
+    },
+    {
+      "question": "What kind of data analytics do you provide for shipments?",
+      "answer": "We offer dashboards with real-time KPIs, delivery performance, and cost analysis."
+    },
+    {
+      "question": "Do you support Just-In-Time (JIT) delivery models?",
+      "answer": "Yes, we synchronize deliveries with your production schedules to reduce inventory costs."
+    },
+    {
+      "question": "Can you handle medical or pharmaceutical logistics?",
+      "answer": "Yes, we specialize in healthcare logistics with regulatory compliance and temperature control."
+    },
+    {
+      "question": "Are you GDP-certified for pharmaceutical logistics?",
+      "answer": "Yes, we comply with Good Distribution Practices (GDP) for handling pharmaceuticals."
+    },
+    {
+      "question": "What\u2019s the maximum weight I can ship?",
+      "answer": "It varies by mode and destination, but we can accommodate up to several tons per shipment."
+    },
+    {
+      "question": "Do you offer AI-based route optimization?",
+      "answer": "Yes, our systems use AI to optimize delivery routes and reduce transit time."
+    },
+    {
+      "question": "Can I integrate your services with my ERP system?",
+      "answer": "Yes, we support integration with major ERP platforms for seamless logistics management."
+    },
+    {
+      "question": "Do you provide freight audit and payment services?",
+      "answer": "Yes, we offer auditing to ensure billing accuracy and manage payments to carriers."
+    },
+    {
+      "question": "What\u2019s the difference between 3PL and 4PL services?",
+      "answer": "3PL handles physical logistics, while 4PL oversees and integrates all supply chain operations."
+    },
+    {
+      "question": "Do you offer carbon-neutral shipping options?",
+      "answer": "Yes, we offer carbon offset programs to reduce your environmental impact."
+    },
+    {
+      "question": "Can I book shipments via API?",
+      "answer": "Yes, our API allows direct booking, tracking, and status updates."
+    },
+    {
+      "question": "Do you provide live ETA updates for deliveries?",
+      "answer": "Yes, our tracking system estimates and updates expected delivery times dynamically."
+    },
+    {
+      "question": "Can I manage multiple locations under one logistics account?",
+      "answer": "Yes, our portal supports multi-site management for centralized control."
+    },
+    {
+      "question": "What is your on-time delivery rate?",
+      "answer": "Our on-time delivery rate exceeds 98% globally."
+    },
+    {
+      "question": "Do you offer custom logistics reports?",
+      "answer": "Yes, we provide tailored reports on inventory, shipment status, and delivery performance."
+    },
+    {
+      "question": "What\u2019s your policy on returns due to customer refusal?",
+      "answer": "We reroute or return the shipment and coordinate with you for further instructions."
+    },
+    {
+      "question": "Can I insure high-value shipments above standard coverage?",
+      "answer": "Yes, additional insurance coverage is available for high-value goods."
+    },
+    {
+      "question": "Do you handle port-to-door and door-to-port services?",
+      "answer": "Yes, we offer flexible combinations based on your shipping requirements."
+    },
+    {
+      "question": "Do you support real-time inventory visibility?",
+      "answer": "Yes, our systems provide live updates on inventory levels and location."
+    },
+    {
+      "question": "Can you deliver to rural or remote areas?",
+      "answer": "Yes, we have extensive networks to ensure delivery to even hard-to-reach locations."
+    },
+    {
+      "question": "How do you ensure data security for logistics transactions?",
+      "answer": "We use encryption, secure APIs, and compliance with global data protection standards."
+    },
+    {
+      "question": "What certifications does your logistics network hold?",
+      "answer": "We hold ISO 9001, ISO 14001, and other industry-specific certifications."
+    },
+    {
+      "question": "Can I pre-pay customs duties for my customers?",
+      "answer": "Yes, we offer Delivered Duty Paid (DDP) options for international shipments."
+    },
+    {
+      "question": "Do you offer shipment consolidation across countries?",
+      "answer": "Yes, we can consolidate cargo from different countries into one destination."
+    },
+    {
+      "question": "What type of training do your drivers receive?",
+      "answer": "Our drivers are trained in safety, handling fragile goods, and using electronic delivery tools."
+    }
+  ]

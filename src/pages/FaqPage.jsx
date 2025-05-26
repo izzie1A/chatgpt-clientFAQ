@@ -1,27 +1,59 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import faqData from '../assets/logistics_faq_raw.json';
+import { embeddSearchChatGPT } from '../api/chatgpt.js';
 
 const FaqPage = () => {
   const navigate = useNavigate();
 
-  const faqItems = [
-    {
-      question: 'What is your return policy?',
-      answer: 'We accept returns within 30 days of purchase with a valid receipt.'
-    },
-    {
-      question: 'How can I track my order?',
-      answer: 'You can track your order using the tracking number provided in your confirmation email.'
-    },
-    {
-      question: 'What payment methods do you accept?',
-      answer: 'We accept all major credit cards, PayPal, and bank transfers.'
-    },
-    {
-      question: 'Do you offer international shipping?',
-      answer: 'Yes, we ship worldwide with various shipping options available at checkout.'
+  const faqItems = faqData;
+
+  // Handle save functionality
+  const saveF = async () => {
+    try {
+      // Log all FAQ items to console
+      let result = []
+      console.log('All FAQ Items:');
+      for (let i = 0; i < faqData.length; i++) {
+      // for (let i = 0; i < 4; i++) {
+        const embedding = await embeddSearchChatGPT(faqData[i].question);
+
+        console.log(embedding);
+        console.log(`FAQ Item ${i + 1}:`, faqData[i]);
+        result.push({ question: faqData[i].question, answer: faqData[i].answer, embedding: embedding })
+      }
+      downloadJSON(result)
+
+
+      // Example: Save the current FAQ items to local storage
+      // localStorage.setItem('faqItems', JSON.stringify(faqItems));
+
+      // Example: Navigate to a different page after save
+      // navigate('/embedded-search');
+
+      // Example: Log to console for debugging
+      console.log('Save function called', { timestamp: new Date().toISOString() });
+
+    } catch (error) {
+      console.error('Error in saveF:', error);
+      alert('An error occurred while saving.');
     }
-  ];
+  };
+  const downloadJSON = (data, filename = 'data.json') => {
+    const jsonStr = JSON.stringify(data, null, 2); // pretty-print JSON
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
 
   // Inline styles
   const styles = {
@@ -89,13 +121,29 @@ const FaqPage = () => {
       backgroundColor: '#e9ecef',
       borderColor: '#ced4da',
     },
+    contactButton: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      backgroundColor: '#4a6fa5',
+      color: 'white',
+      border: '1px solid #3a5a80',
+      borderRadius: '6px',
+      padding: '0.6rem 1.2rem',
+      fontSize: '0.95rem',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease',
+      marginLeft: '1rem',
+    },
+    contactButtonHover: {
+      backgroundColor: '#3a5a80',
+      borderColor: '#2a4a70',
+    },
   };
 
   return (
     <div style={styles.container}>
       <header style={styles.header}>
-        <h1 style={styles.title}>Frequently Asked Questions</h1>
-        <p style={styles.subtitle}>Find answers to common questions about our services and policies</p>
+        <p style={styles.title}>Frequently Asked Questions</p>
       </header>
 
       <div style={styles.content}>
@@ -108,14 +156,22 @@ const FaqPage = () => {
           ))}
         </div>
 
-        <button 
-          onClick={() => navigate('/')} 
-          style={styles.backButton}
-          onMouseOver={(e) => e.target.style.backgroundColor = styles.backButtonHover.backgroundColor}
-          onMouseOut={(e) => e.target.style.backgroundColor = styles.backButton.backgroundColor}
-        >
-          ← Back to Chat
-        </button>
+        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
+          <button
+            onClick={() => navigate('/')}
+            style={styles.backButton}
+            onMouseOver={(e) => e.target.style.backgroundColor = styles.backButtonHover.backgroundColor}
+            onMouseOut={(e) => e.target.style.backgroundColor = styles.backButton.backgroundColor}
+          >
+            ← 返回聊天室 / Back to Chat
+          </button>
+          <button
+            onClick={() => saveF()}
+            style={styles.contactButton}
+          >
+            get embedded
+          </button>
+        </div>
       </div>
     </div>
   );
