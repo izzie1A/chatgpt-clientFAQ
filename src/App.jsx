@@ -141,7 +141,7 @@ function App() {
     }
   };
 
-  // Styles
+    // Styles
   const styles = {
     appContainer: {
       minHeight: '100vh',
@@ -169,6 +169,7 @@ function App() {
       border: '1px solid #ddd',
       fontSize: '16px',
       backgroundColor: '#fff',
+      color: '#333',
     },
     button: {
       backgroundColor: '#4a6fa5',
@@ -206,13 +207,15 @@ function App() {
     responseContainer: {
       marginTop: '32px',
       padding: '20px',
-      backgroundColor: '#fff',
       borderRadius: '8px',
       boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+      color: '#fff',
+       backgroundColor: '#333',
     },
     responseTitle: {
       marginTop: 0,
-      color: '#2c3e50',
+      color: '#fff',
+      
     },
     error: {
       color: '#e74c3c',
@@ -285,7 +288,7 @@ function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Type your question here..."
-          style={styles.textarea}
+          style={styles.select}
           disabled={isLoading}
         />
 
