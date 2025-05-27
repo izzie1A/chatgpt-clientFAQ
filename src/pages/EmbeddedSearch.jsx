@@ -15,6 +15,7 @@ const EmbeddedSearch = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [showSearching, setShowSearching] = useState(false);
 
   const [text, setText] = useState('');
   const [embedding, setEmbedding] = useState([]);
@@ -36,8 +37,17 @@ const EmbeddedSearch = () => {
 
   };
   const handleSubmit = async () => {
-    const result = await embeddSearchChatGPT(text);
-    setEmbedding(result);
+    if (!text.trim()) return;
+    
+    setShowSearching(true);
+    try {
+      const result = await embeddSearchChatGPT(text);
+      setEmbedding(result);
+    } catch (error) {
+      console.error('Search error:', error);
+    } finally {
+      setShowSearching(false);
+    }
   };
 
 
@@ -89,7 +99,10 @@ const EmbeddedSearch = () => {
               transition: 'border-color 0.3s',
             }}
           />
-          <button onClick={handleSubmit}
+
+
+          <button
+            onClick={handleSubmit}
             style={{
               padding: '0 24px',
               backgroundColor: '#4a6fa5',
@@ -99,10 +112,57 @@ const EmbeddedSearch = () => {
               cursor: 'pointer',
               fontSize: '1rem',
               fontWeight: '500',
-              transition: 'background-color 0.3s',
+              transition: 'all 0.2s ease-out',
+              transform: 'translateY(0)',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+              position: 'relative',
+              overflow: 'hidden',
+              height: '40px',
+              minWidth: '100px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
+            onMouseDown={(e) => {
+              e.currentTarget.style.transform = 'translateY(2px)';
+              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.2)';
+            }}
+            onMouseUp={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+            }}
+            onTouchStart={(e) => {
+              e.currentTarget.style.transform = 'translateY(2px)';
+              e.currentTarget.style.boxShadow = '0 1px 2px rgba(0,0,0,0.2)';
+            }}
+            onTouchEnd={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+            }}
+          >
+            <span style={{
+              position: 'relative',
+              transition: 'all 0.3s ease',
+              display: 'inline-block'
+            }}>
+              Search
+            </span>
+          </button>
 
-          >seraching</button>
+          <style jsx global>{`
+            @keyframes pulse {
+              0% { transform: scale(1); }
+              50% { transform: scale(0.95); }
+              100% { transform: scale(1); }
+            }
+            button:active span {
+              animation: pulse 0.3s ease;
+            }
+          `}</style>
 
 
 
@@ -144,11 +204,18 @@ const EmbeddedSearch = () => {
           </button> */}
         </div>
 
-        {embedding.length > 0 && (
-          <div>
-            Searching
+        {showSearching && (
+          <div style={{
+            textAlign: 'center',
+            padding: '10px',
+            color: '#4a6fa5',
+            fontStyle: 'italic'
+          }}>
+            Searching...
           </div>
         )}
+
+        
       </div>
 
 

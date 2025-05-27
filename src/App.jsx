@@ -34,7 +34,7 @@ const Navbar = () => {
       <div style={{ display: 'flex', gap: '2rem' }}>
         {/* <Link to="/" style={navLinkStyle}>Home</Link> */}
         <Link to="/" style={navLinkStyle}>Embedded Search</Link>
-        <Link to="/search" style={navLinkStyle}>Search</Link>
+        <Link to="/search" style={navLinkStyle}>Search with tag</Link>
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
       </div>
     </nav>
