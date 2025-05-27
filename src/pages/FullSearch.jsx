@@ -145,7 +145,40 @@ const FullSearch = () => {
               padding: '1.5rem',
               boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
             }}>
-              {searchResults}
+              {(() => {
+                try {
+                  // Try to parse the response to extract question and answer
+                  const parts = searchResults.split('Question: ')[1]?.split('Answer: ');
+                  if (parts && parts.length === 2) {
+                    const question = parts[0].trim();
+                    const answer = parts[1].replace(/"/g, '').trim();
+                    return (
+                      <div style={{ lineHeight: '1.6' }}>
+                        <h4 style={{
+                          color: '#2c3e50',
+                          margin: '0 0 1rem 0',
+                          fontSize: '1.1rem',
+                          fontWeight: '600'
+                        }}>
+                          {question}
+                        </h4>
+                        <div style={{
+                          backgroundColor: '#f8f9fa',
+                          padding: '1rem',
+                          borderRadius: '6px',
+                          borderLeft: '3px solid #4a6fa5'
+                        }}>
+                          <p style={{ margin: 0, color: '#495057' }}>{answer}</p>
+                        </div>
+                      </div>
+                    );
+                  }
+                } catch (e) {
+                  console.error('Error formatting result:', e);
+                }
+                // Fallback to original text if parsing fails
+                return <div style={{ whiteSpace: 'pre-line' }}>{searchResults}</div>;
+              })()}
             </div>
           </div>
         ) : searchQuery ? (
