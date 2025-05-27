@@ -1,4 +1,6 @@
 import axios from 'axios';
+import faqData from '../assets/logistics_faq_raw.json';
+
 
 const API_URL = 'https://api.openai.com/v1/chat/completions';
 const MAX_RETRIES = 3; // 最大重試次數
@@ -65,7 +67,7 @@ export async function askChatGPT(message) {
     .replace(/\s+/g, ' ')     // 簡化多空格
     .trim();
 }
-export async function embeddSearchChatGPT(mssage) {
+export async function embeddSearchChatGPT(message) {
   
   let lastError;
   // const cleaned = preprocessText(message);
@@ -168,34 +170,29 @@ export async function getTagFromChatGPT(message) {
 }
 
 /**
- * Process a file and ask questions about its content using ChatGPT
- * @param {File} file - The file to process
- * @param {string} question - The question to ask about the file content
- * @returns {Promise<string>} - The AI's response
+ * Search through FAQ data and get an answer using ChatGPT
+ * @param {string} question - The question to ask about the FAQ content
+ * @returns {Promise<string>} - The AI's response with the most relevant FAQ answer
  */
-export async function fullSearchData(file, question) {
+export async function fullSearchData(question) {
   let lastError;
   
   // Validate input
-  if (!file) {
-    throw new Error('No file provided');
+  if (!faqData) {
+    throw new Error('FAQ data not loaded');
   }
   if (!question?.trim()) {
     throw new Error('No question provided');
   }
 
-  // Read the file content
-  let fileContent;
-  try {
-    fileContent = await readFileAsText(file);
-  } catch (error) {
-    console.error('Error reading file:', error);
-    throw new Error('Failed to read file. Please try another file.');
-  }
-
   // Prepare the prompt for ChatGPT
-  const prompt = `I have a file named "${file.name}" with the following content:\n\n${fileContent}\n\nQuestion: ${question}\n\nPlease provide a detailed answer based on the file content.`;
-  
+  const prompt = `You are a helpful customer service assistant. 
+Here is some FAQ data in JSON format:
+${JSON.stringify(faqData, null, 2)}
+
+Customer question: ${question}
+
+Please provide Which FAQ question and answer are most relevant to the customer's question Only. Only answer from the FAQ data directly. If no relevant answer is found, politely let the customer know that you couldn't find a specific answer to their question and suggest they contact support for further assistance.`;
   // Make the API call with retry logic
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     try {
@@ -249,11 +246,6 @@ export async function fullSearchData(file, question) {
   throw lastError || new Error('Failed to process file with ChatGPT');
 }
 
-/**
- * Helper function to read file as text
- * @param {File} file - The file to read
- * @returns {Promise<string>} - The file content as text
- */
 function readFileAsText(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();

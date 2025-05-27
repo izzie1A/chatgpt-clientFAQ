@@ -5,6 +5,7 @@ import FaqPage from './pages/FaqPage';
 import SearchPage from './pages/SearchPage';
 import EmbeddedSearch from './pages/EmbeddedSearch';
 import FullSearch from './pages/FullSearch';
+import { commonQuestions } from './constants/commonQuestions';
 
 // Navbar Component
 const Navbar = () => {
@@ -61,16 +62,6 @@ function App() {
   const [selectedQuestion, setSelectedQuestion] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
-  // Common questions for the dropdown
-  const commonQuestions = [
-    { value: '', label: 'Select a common question...' },
-    { value: 'shipping', label: 'When is the shipping estimate date?' },
-    { value: 'return', label: 'What is your return policy?' },
-    { value: 'tracking', label: 'How can I track my order?' },
-    { value: 'payment', label: 'What payment methods do you accept?' },
-    { value: 'custom', label: 'Custom question...' }
-  ];
 
   // Handle question selection from dropdown
   const handleQuestionSelect = (e) => {
