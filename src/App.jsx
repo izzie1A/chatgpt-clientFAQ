@@ -4,6 +4,7 @@ import { askChatGPT, testAPIKey } from './api/chatgpt';
 import FaqPage from './pages/FaqPage';
 import SearchPage from './pages/SearchPage';
 import EmbeddedSearch from './pages/EmbeddedSearch';
+import FullSearch from './pages/FullSearch';
 
 // Navbar Component
 const Navbar = () => {
@@ -32,9 +33,9 @@ const Navbar = () => {
         ChatGPT
       </Link>
       <div style={{ display: 'flex', gap: '2rem' }}>
-        {/* <Link to="/" style={navLinkStyle}>Home</Link> */}
         <Link to="/" style={navLinkStyle}>Embedded Search</Link>
         <Link to="/search" style={navLinkStyle}>Search with tag</Link>
+        <Link to="/full-search" style={navLinkStyle}>Full Search</Link>
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
       </div>
     </nav>
@@ -325,11 +326,11 @@ function App() {
         <Navbar />
         <div style={styles.container}>
           <Routes>
-            {/* <Route path="/" element={<ChatInterface />} /> */}
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/full-search" element={<FullSearch />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/" element={<EmbeddedSearch />} />
             <Route path="/embedded-search" element={<EmbeddedSearch />} />
-            <Route path="/search" element={<SearchPage />} />
           </Routes>
         </div>
       </div>

@@ -58,19 +58,112 @@ const SearchPage = () => {
         </button>
       </form>
 
-      <div style={styles.resultsContainer}>
+      <div style={{
+        marginTop: '2rem',
+        padding: '1.5rem',
+        backgroundColor: '#f8f9fa',
+        borderRadius: '12px',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+        minHeight: '150px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'all 0.3s ease'
+      }}>
         {isSearching ? (
-          <p>Searching...</p>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem'
+          }}>
+            <div style={{
+              width: '40px',
+              height: '40px',
+              border: '4px solid #f3f3f3',
+              borderTop: '4px solid #4a6fa5',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite'
+            }}></div>
+            <p style={{
+              color: '#4a6fa5',
+              fontWeight: '500',
+              margin: 0
+            }}>Searching for results...</p>
+          </div>
         ) : searchResults.length > 0 ? (
-          <div style={styles.resultsList}>
-            {searchResults}
+          <div style={{
+            width: '100%',
+            maxWidth: '800px',
+            margin: '0 auto',
+            padding: '0.5rem 0'
+          }}>
+            <p style={{
+              color: '#6c757d',
+              marginBottom: '1.5rem',
+              fontSize: '0.95rem',
+              textAlign: 'center',
+              fontStyle: 'italic'
+            }}>
+              Showing {searchResults.length} matching tag{searchResults.length !== 1 ? 's' : ''} for your search
+            </p>
+            <div style={{
+              backgroundColor: 'white',
+              borderRadius: '8px',
+              padding: '1.5rem',
+              boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
+            }}>
+              {searchResults}
+            </div>
           </div>
         ) : searchQuery ? (
-          <p>No results found for "{searchQuery}"</p>
+          <div style={{
+            textAlign: 'center',
+            padding: '1.5rem'
+          }}>
+            <div style={{
+              fontSize: '3rem',
+              marginBottom: '1rem',
+              color: '#e9ecef'
+            }}>🔍</div>
+            <h3 style={{
+              color: '#495057',
+              margin: '0 0 0.5rem 0'
+            }}>No results found</h3>
+            <p style={{
+              color: '#6c757d',
+              margin: 0
+            }}>We couldn't find any matches for "{searchQuery}"</p>
+          </div>
         ) : (
-          <p>Enter a search query to begin</p>
+          <div style={{
+            textAlign: 'center',
+            padding: '1.5rem'
+          }}>
+            <div style={{
+              fontSize: '3rem',
+              marginBottom: '1rem',
+              color: '#e9ecef'
+            }}>🔍</div>
+            <h3 style={{
+              color: '#495057',
+              margin: '0 0 0.5rem 0'
+            }}>Search with tags</h3>
+            <p style={{
+              color: '#6c757d',
+              margin: 0
+            }}>Enter your search query to find relevant tags</p>
+          </div>
         )}
       </div>
+      
+      <style jsx global>{`
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      `}</style>
 
 
 

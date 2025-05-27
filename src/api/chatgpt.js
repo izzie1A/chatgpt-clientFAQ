@@ -65,7 +65,8 @@ export async function askChatGPT(message) {
     .replace(/\s+/g, ' ')     // 簡化多空格
     .trim();
 }
-export async function embeddSearchChatGPT(message) {
+export async function embeddSearchChatGPT(mssage) {
+  
   let lastError;
   // const cleaned = preprocessText(message);
   
@@ -164,6 +165,114 @@ export async function getTagFromChatGPT(message) {
   
   console.error('最終錯誤:', lastError);
   return 'Sorry, an error occurred. Please try again later.';
+}
+
+/**
+ * Process a file and ask questions about its content using ChatGPT
+ * @param {File} file - The file to process
+ * @param {string} question - The question to ask about the file content
+ * @returns {Promise<string>} - The AI's response
+ */
+export async function fullSearchData(file, question) {
+  let lastError;
+  
+  // Validate input
+  if (!file) {
+    throw new Error('No file provided');
+  }
+  if (!question?.trim()) {
+    throw new Error('No question provided');
+  }
+
+  // Read the file content
+  let fileContent;
+  try {
+    fileContent = await readFileAsText(file);
+  } catch (error) {
+    console.error('Error reading file:', error);
+    throw new Error('Failed to read file. Please try another file.');
+  }
+
+  // Prepare the prompt for ChatGPT
+  const prompt = `I have a file named "${file.name}" with the following content:\n\n${fileContent}\n\nQuestion: ${question}\n\nPlease provide a detailed answer based on the file content.`;
+  
+  // Make the API call with retry logic
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    try {
+      // Add delay for retries
+      if (attempt > 0) {
+        const delay = getDelay(attempt - 1);
+        console.log(`Retry ${attempt}/${MAX_RETRIES} after ${delay}ms delay...`);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+      
+      const response = await axios.post(
+        API_URL,
+        {
+          model: 'gpt-4', // Using GPT-4 for better file understanding
+          messages: [
+            {
+              role: 'system',
+              content: 'You are a helpful assistant that analyzes file contents and answers questions about them.'
+            },
+            {
+              role: 'user',
+              content: prompt
+            }
+          ],
+          temperature: 0.3, // Lower temperature for more focused responses
+          max_tokens: 2000
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`
+          },
+          timeout: 45000 // Increased timeout for file processing
+        }
+      );
+      
+      return response.data.choices[0].message.content;
+      
+    } catch (error) {
+      lastError = error;
+      console.error(`Attempt ${attempt + 1} failed:`, error.message);
+      
+      // If it's not a rate limit error or it's the last attempt, break
+      if (error.response?.status !== 429 || attempt === MAX_RETRIES - 1) {
+        break;
+      }
+    }
+  }
+  
+  // Handle final error
+  throw lastError || new Error('Failed to process file with ChatGPT');
+}
+
+/**
+ * Helper function to read file as text
+ * @param {File} file - The file to read
+ * @returns {Promise<string>} - The file content as text
+ */
+function readFileAsText(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    
+    reader.onload = (event) => {
+      try {
+        resolve(event.target.result);
+      } catch (error) {
+        reject(error);
+      }
+    };
+    
+    reader.onerror = (error) => {
+      reject(error);
+    };
+    
+    // Read the file as text
+    reader.readAsText(file);
+  });
 }
 
 // 在 chatgpt.js 文件底部添加
