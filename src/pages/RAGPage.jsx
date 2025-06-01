@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { commonQuestions } from '../constants/commonQuestions';
+import faqData from '../assets/logistics_faq_raw.json';
 
 const RAGPage = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState('');
+  const [selectedFaq, setSelectedFaq] = useState(null);
 
   // Handle question selection from dropdown
   const handleQuestionSelect = (e) => {
@@ -90,6 +92,59 @@ const RAGPage = () => {
             gap: '1rem',
             marginTop: '2rem',
           }}>
+            <div>
+              <h3 style={{
+                color: '#4a6fa5',
+                marginBottom: '0.5rem',
+                fontSize: '1.2rem',
+              }}>FAQ Preview</h3>
+              <select
+                value={selectedFaq || ''}
+                onChange={(e) => {
+                  const faqIndex = e.target.value;
+                  setSelectedFaq(faqIndex);
+                  setSearchQuery(faqData[faqIndex]?.question || '');
+                }}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  borderRadius: '4px',
+                  border: '1px solid #ddd',
+                  fontSize: '1rem',
+                  backgroundColor: '#fff',
+                  color: '#333',
+                }}
+              >
+                <option value="">Select a FAQ item...</option>
+                {faqData.map((faq, index) => (
+                  <option key={index} value={index}>
+                    {faq.question}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {selectedFaq !== null && (
+              <div style={{
+                backgroundColor: '#f8f9fa',
+                padding: '1rem',
+                borderRadius: '4px',
+                marginBottom: '1rem',
+              }}>
+                <h4 style={{
+                  color: '#4a6fa5',
+                  marginBottom: '0.5rem',
+                  fontSize: '1.1rem',
+                }}>Selected FAQ:</h4>
+                <p style={{
+                  color: '#333',
+                  marginBottom: '0.5rem',
+                }}>Question: {faqData[selectedFaq].question}</p>
+                <p style={{
+                  color: '#666',
+                }}>Answer: {faqData[selectedFaq].answer}</p>
+              </div>
+            )}
             <div>
               <select
                 value={selectedQuestion}
