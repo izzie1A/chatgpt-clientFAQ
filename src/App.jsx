@@ -5,6 +5,8 @@ import FaqPage from './pages/FaqPage';
 import SearchPage from './pages/SearchPage';
 import EmbeddedSearch from './pages/EmbeddedSearch';
 import FullSearch from './pages/FullSearch';
+import LanchainPage from './pages/LanchainPage';
+import RAGPage from './pages/RAGPage';
 import { commonQuestions } from './constants/commonQuestions';
 
 // Navbar Component
@@ -37,6 +39,8 @@ const Navbar = () => {
         <Link to="/" style={navLinkStyle}>Embedded Search</Link>
         <Link to="/search" style={navLinkStyle}>Search with tag</Link>
         <Link to="/full-search" style={navLinkStyle}>Full Search</Link>
+        <Link to="/lanchain" style={navLinkStyle}>Lanchain</Link>
+        <Link to="/rag" style={navLinkStyle}>RAG</Link>
         <Link to="/faq" style={navLinkStyle}>FAQ</Link>
       </div>
     </nav>
@@ -319,6 +323,8 @@ function App() {
           <Routes>
             <Route path="/search" element={<SearchPage />} />
             <Route path="/full-search" element={<FullSearch />} />
+            <Route path="/lanchain" element={<LanchainPage />} />
+            <Route path="/rag" element={<RAGPage />} />
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/" element={<EmbeddedSearch />} />
             <Route path="/embedded-search" element={<EmbeddedSearch />} />

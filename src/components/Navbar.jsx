@@ -19,8 +19,6 @@ const Navbar = () => {
             ...styles.navLink,
             ...(isActive('/') && styles.activeLink)
           }}
-          onMouseOver={(e) => e.target.style.color = styles.navLinkHover.color}
-          onMouseOut={(e) => e.target.style.color = isActive('/') ? styles.activeLink.color : styles.navLink.color}
         >
           Home
         </Link>
@@ -30,8 +28,6 @@ const Navbar = () => {
             ...styles.navLink,
             ...(isActive('/faq') && styles.activeLink)
           }}
-          onMouseOver={(e) => e.target.style.color = styles.navLinkHover.color}
-          onMouseOut={(e) => e.target.style.color = isActive('/faq') ? styles.activeLink.color : styles.navLink.color}
         >
           FAQ
         </Link>
@@ -43,52 +39,71 @@ const Navbar = () => {
 const styles = {
   navbar: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '1rem 2rem',
-    backgroundColor: '#fff',
-    boxShadow: '0 2px 10px rgba(0, 0, 0, 0.05)',
-    position: 'sticky',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    backgroundColor: '#2c3e50',
+    position: 'fixed',
     top: 0,
+    left: 0,
+    height: '100vh',
+    width: '280px',
     zIndex: 1000,
+    boxShadow: '4px 0 15px rgba(0, 0, 0, 0.1)',
+    padding: '1.5rem',
   },
   logo: {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
+    fontSize: '1.8rem',
+    fontWeight: '700',
+    marginBottom: '2rem',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+    width: '100%',
+    padding: '0 0 1rem 0',
   },
   logoLink: {
     textDecoration: 'none',
-    color: '#2c3e50',
+    color: '#fff',
     display: 'flex',
     alignItems: 'center',
+    gap: '0.5rem',
   },
   logoText: {
-    background: 'linear-gradient(90deg, #4a6fa5, #5e9ce0)',
+    background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     fontWeight: '700',
-    fontSize: '1.8rem',
   },
   navLinks: {
     display: 'flex',
-    gap: '2rem',
+    flexDirection: 'column',
+    gap: '1rem',
+    width: '100%',
   },
   navLink: {
     textDecoration: 'none',
-    color: '#6c757d',
+    color: 'rgba(255, 255, 255, 0.7)',
     fontWeight: '500',
-    padding: '0.5rem 0',
-    position: 'relative',
+    padding: '0.8rem 1rem',
+    width: '100%',
+    display: 'block',
     transition: 'all 0.3s ease',
+    borderRadius: '8px',
     fontSize: '1.1rem',
+    textAlign: 'left',
+    border: '1px solid transparent',
+    backdropFilter: 'blur(4px)',
+    background: 'rgba(255, 255, 255, 0.05)',
   },
   activeLink: {
-    color: '#4a6fa5',
+    color: '#fff',
     fontWeight: '600',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
   },
   navLinkHover: {
-    color: '#4a6fa5',
+    color: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
   }
 };
 
