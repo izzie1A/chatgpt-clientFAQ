@@ -8,6 +8,7 @@ import FullSearch from './pages/FullSearch';
 import LanchainPage from './pages/LanchainPage';
 import RAGPage from './pages/RAGPage';
 import { commonQuestions } from './constants/commonQuestions';
+import ChatButton from './components/ChatButton';
 
 // Navbar Component
 const Navbar = () => {
@@ -317,9 +318,10 @@ function App() {
 
   return (
     <Router>
-      <div style={styles.appContainer}>
+      <div className="app">
         <Navbar />
-        <div style={styles.container}>
+        <ChatButton />
+        <div className="container">
           <Routes>
             <Route path="/search" element={<SearchPage />} />
             <Route path="/full-search" element={<FullSearch />} />
